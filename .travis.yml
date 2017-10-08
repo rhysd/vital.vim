@@ -1,6 +1,4 @@
 language: generic
-rvm:
-  - 2.4.1
 sudo: false
 git:
   depth: 10
@@ -26,6 +24,7 @@ addons:
       - python3-dev
       - liblua5.1-0-dev
       - lua5.1
+      - libruby
 
 install:
   - bash scripts/install-vim.sh
@@ -44,6 +43,7 @@ script:
   # - /tmp/vim-themis/bin/themis --runtimepath /tmp/vimproc --reporter dot
   - /tmp/vim-themis/bin/themis --runtimepath /tmp/vimproc --exclude ConcurrentProcess --reporter dot
   - ruby scripts/check-changelog.rb
+
 notifications:
   webhooks:
     urls:
